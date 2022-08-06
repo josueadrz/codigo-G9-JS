@@ -1,7 +1,7 @@
 
 function callMenu() {
     let nro_ejercicio = parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n  Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n 6. Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares")
     );
     if (isNaN(nro_ejercicio)) {
         alert("porfavor ingresa valores numericos");
@@ -43,6 +43,22 @@ function MenuEjercicios(nro_ejercicio) {
             let pi = parseInt(prompt("ingresa el valor de pi"));
             let radio = parseInt(prompt("ingresa el valor de radio"));
             alert(areaCirculo(pi, radio));
+            break;
+        
+        case 6:
+            let horas = parseInt(prompt("ingresa las horas trabajadas"));
+            let valorHoras = parseInt(prompt("ingresa el valor de las horas"));
+            alert(salarioSemanal(horas,valorHoras));
+            break;
+
+        case 7:
+            let pulgadas = parseInt(prompt("ingresa las pulgadas"));
+            alert(convertirPulgadas(pulgadas));
+            break;
+
+        case 8:
+            let soles = parseInt(prompt("ingresa los soles"));
+            alert(convertirDolares(soles));
             break;
 
         default:
@@ -87,5 +103,29 @@ function areaCirculo(pi, radio) {
         return "porfavor ingrese valores"
     } else {
         return (pi * Math.pow(radio, 2))
+    }
+}
+
+function salarioSemanal(horas, valorHoras) {
+    if (isNaN(horas) || isNaN(valorHoras)) {
+        return "porfavor ingrese valores"
+    } else {
+        return (horas * valorHoras)
+    }
+}
+
+function convertirPulgadas(pulgadas) {
+    if (isNaN(pulgadas)) {
+        return "porfavor ingrese pulgadas"
+    } else {
+        return (pulgadas * 2.54)
+    }
+}
+
+function convertirDolares(soles) {
+    if (isNaN(soles)){
+        return "profavor ingrese los soles"
+    }else {
+        return (soles / 3.90)  + " dolares"
     }
 }
