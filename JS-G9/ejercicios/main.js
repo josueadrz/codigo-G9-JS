@@ -44,11 +44,11 @@ function MenuEjercicios(nro_ejercicio) {
             let radio = parseInt(prompt("ingresa el valor de radio"));
             alert(areaCirculo(pi, radio));
             break;
-        
+
         case 6:
             let horas = parseInt(prompt("ingresa las horas trabajadas"));
             let valorHoras = parseInt(prompt("ingresa el valor de las horas"));
-            alert(salarioSemanal(horas,valorHoras));
+            alert(salarioSemanal(horas, valorHoras));
             break;
 
         case 7:
@@ -65,6 +65,16 @@ function MenuEjercicios(nro_ejercicio) {
             let añoNacieron = parseInt(prompt("ingresa año que nacieron"));
             let añoActual = parseInt(prompt("ingresa año actual"));
             alert(edadPersonas(añoNacieron, añoActual));
+            break;
+
+        case 10:
+            let nomb1 = prompt("ingresa nombre de la primera persona");
+            let ed1 = parseInt(prompt("ingresa la edad de la primera perosna"));
+            let nomb2 = prompt("ingresa nombre segunda persona");
+            let ed2 = parseInt(prompt("ingresa edad segunda persona"));
+            let nomb3 = prompt("ingresa nombre tercera persona");
+            let ed3 = parseInt(prompt("ingresa edad tercera persona"));
+            alert(nombreEdadMenor( nomb1, ed1, nomb2, ed2, nomb3, ed3));
             break;
 
         default:
@@ -129,17 +139,41 @@ function convertirPulgadas(pulgadas) {
 }
 
 function convertirDolares(soles) {
-    if (isNaN(soles)){
+    if (isNaN(soles)) {
         return "profavor ingrese los soles"
-    }else {
-        return (soles / 3.90)  + " dolares"
+    } else {
+        return (soles / 3.90) + " dolares"
     }
 }
 
 function edadPersonas(añoNacieron, añoActual) {
-    if(isNaN(añoNacieron) || isNaN(añoActual)){
+    if (isNaN(añoNacieron) || isNaN(añoActual)) {
         return "ingrese los años"
     } else {
         return (añoActual - añoNacieron) + " años"
     }
+}
+
+function nombreEdadMenor(nomb1, ed1, nomb2, ed2, nomb3, ed3) {
+    if (isNaN(ed1) || isNaN(ed2) || isNaN(ed3)) {
+        return " ingrese los valores correctos"
+    } else {
+        if (ed1 < ed2) {
+            if (ed1 < ed3) {
+                return `la persona de menor edad es: ${nomb1} y su edad es: ${ed1}`;
+            }
+            else {
+                return `la persona de menor edad es: ${nomb3} y su edad es: ${ed3}`;
+            }
+        }
+        else {
+            if(ed2 < ed3){
+                return `la persona de menor edad es: ${nomb2} y su edad es: ${ed2}`;
+            }
+            else {
+                return `la persona de menor edad es: ${nomb3} y su edad es: ${ed3}`;
+            }
+        }
+    }
+
 }
