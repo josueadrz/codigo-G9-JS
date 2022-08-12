@@ -1,7 +1,7 @@
 
 function callMenu() {
     let nro_ejercicio = parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n 6. Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares \r\n 9. calcular la edad trabajadores \r\n 10. nombre y edad de la persona menor")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n 6. Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares \r\n 9. calcular la edad trabajadores \r\n 10. nombre y edad de la persona menor \r\n 11. bono por tiempo de antiguedad \r\n 12. salario profesor durante 6 años \r\n 13.calificaciones de los alumnos \r\n 14. focos de locores \r\n 15.personas que pueden votar")
     );
     if (isNaN(nro_ejercicio)) {
         alert("porfavor ingresa valores numericos");
@@ -269,18 +269,18 @@ function focos() {
 
 function elecciones() {
     while (true) {
-        let req = parseInt(prompt("Si desea realizar la consulta presione 1, si desea salir ingrese 0"));
+        let req = parseInt(prompt("Si desea consultar presione 1, si desea salir ingrese 0"));
         if (req == 1) {
             let enter = parseInt(prompt("Ingrese su edad"));
             if (enter >= 18) {
                 alert("Usted si puede votar en estas elecciones")
             } else {
-                alert("Usted aún no puede votar en estas elecciones")
+                alert("Usted  no puede votar en estas elecciones")
             }
         }
         else {
             break;
         }
     }
-    return `Gracias por sus consultas`
+    return `Gracias por consultar`
 }
