@@ -19,19 +19,28 @@ body {
     font-size: 40px;
 }
 
+/* ------------config. footer--------------------- */
+li{
+    display: inline;
+}
+
+.contiene-img{
+    list-style: none;
+    display: flex;
+    margin: auto;
+    justify-content: space-around ;
+}
+
+
 
 /* -------------configuracion del button----------------------- */
-/* From uiverse.io by @barisdogansutcu */
+
 .contiene-button__subt-img{
 text-align: center;
 }
 
 .contiene-button {
     margin: 10px 0;
-}
-
-button{
-    cursor: pointer;
 }
 
 

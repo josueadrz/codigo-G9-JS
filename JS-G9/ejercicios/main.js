@@ -74,8 +74,27 @@ function MenuEjercicios(nro_ejercicio) {
             let ed2 = parseInt(prompt("ingresa edad segunda persona"));
             let nomb3 = prompt("ingresa nombre tercera persona");
             let ed3 = parseInt(prompt("ingresa edad tercera persona"));
-            alert(nombreEdadMenor( nomb1, ed1, nomb2, ed2, nomb3, ed3));
+            alert(nombreEdadMenor(nomb1, ed1, nomb2, ed2, nomb3, ed3));
             break;
+
+        case 11:
+            alert(bono())
+            break;
+
+        case 12:
+            alert(salario())
+            break;
+        case 13:
+            alert(aprobados())
+            break;
+        case 14:
+            alert(focos())
+            break;
+        case 15:
+            alert(elecciones())
+            break;
+
+
 
         default:
             alert("porfavor ingresa valores numericos")
@@ -167,7 +186,7 @@ function nombreEdadMenor(nomb1, ed1, nomb2, ed2, nomb3, ed3) {
             }
         }
         else {
-            if(ed2 < ed3){
+            if (ed2 < ed3) {
                 return `la persona de menor edad es: ${nomb2} y su edad es: ${ed2}`;
             }
             else {
@@ -176,4 +195,92 @@ function nombreEdadMenor(nomb1, ed1, nomb2, ed2, nomb3, ed3) {
         }
     }
 
+}
+
+
+function bono() {
+    let year = parseInt(prompt('Ingrese el año de ingreso del empleado'));
+    let presentYear = new Date();
+    let present = presentYear.getFullYear();
+    let dif = present - year;
+    if (dif <= 5) {
+        return `El bono que le corresponde es: ${(dif * 100)}`;
+    }
+    else {
+        return `El bono que le corresponde es: ${1000}`;
+    }
+}
+
+function salario() {
+    let salary = 1500;
+    let salaries = new Array();
+    for (var i = 0; i < 6; i++) {
+        salary = salary + (salary * 0.1);
+        salaries[i] = salary.toFixed(2)
+    }
+    let strSalary = salary.toFixed(2)
+    return `El salario del profesor después de 6 años es: ${strSalary} y sus salarios anuales fueron: ${(salaries)}`;
+}
+
+function aprobados() {
+    let total = 0;
+    let approved = 0;
+    let calif = parseInt(prompt("Ingrese la nota aprobatoria"));
+    while (true) {
+        let req = parseInt(prompt("Si desea agregar una nota presione 1, si desea ver la cantidad de aprobados y desaprobados ingrese 0"));
+        if (req == 1) {
+            let note = parseInt(prompt("Ingrese la nota del estudiante"));
+            if (note >= calif) {
+                approved++;
+            }
+            total++;
+        }
+        else {
+            break;
+        }
+    }
+    return `La cantidad de alumnos es: ${total} de los cuales ${approved} son los aprobados y ${(total - approved)} son los reprobados`
+}
+
+function focos() {
+    let total = 0;
+    let green = 0;
+    let white = 0;
+    let red = 0;
+    while (true) {
+        let req = parseInt(prompt("Si desea agregar un nuevo foco presione 1, si desea ver la cantidad de cada color de foco ingrese 0"));
+        if (req == 1) {
+            let enter = parseInt(prompt("Ingrese el color del foco: \n 1. Verde \n 2. Blanco \n 3. Rojo"));
+            if (enter == 1) {
+                green++;
+            } else if (enter == 2) {
+                white++;
+            } else {
+                red++;
+            }
+            total++;
+        }
+        else {
+            break;
+        }
+    }
+    return `La cantidad total de focos es: ${total} de los cuales ${green} son verdes, ${white} son blancos y ${red} son rojos`
+}
+
+function elecciones() {
+    while (true) {
+        let req = parseInt(prompt("Si desea realizar la consulta presione 1, si desea salir ingrese 0"));
+        if (req == 1) {
+            let enter = parseInt(prompt("Ingrese su edad"));
+            if (enter >= 18) {
+                alert("Usted si puede votar en estas elecciones")
+            } else {
+                alert("Usted aún no puede votar en estas elecciones")
+            }
+        }
+        else {
+            break;
+        }
+    }
+    return `Gracias por sus consultas`
 }
