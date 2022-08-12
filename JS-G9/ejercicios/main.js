@@ -1,7 +1,7 @@
 
 function callMenu() {
     let nro_ejercicio = parseInt(
-        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n 6. Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares")
+        prompt("ingrese el numero de ejercicio que quiere ejecutar: \r\n 1.suma. \r\n 2.Promedio de Examanes \r\n 3. Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.calcular el area del Circulo \r\n 6. Calcular salario semanal \r\n 7. convertir pulgadas \r\n 8. cambiar a dolares \r\n 9. calcular la edad trabajadores \r\n 10. nombre y edad de la persona menor")
     );
     if (isNaN(nro_ejercicio)) {
         alert("porfavor ingresa valores numericos");
@@ -59,6 +59,12 @@ function MenuEjercicios(nro_ejercicio) {
         case 8:
             let soles = parseInt(prompt("ingresa los soles"));
             alert(convertirDolares(soles));
+            break;
+
+        case 9:
+            let añoNacieron = parseInt(prompt("ingresa año que nacieron"));
+            let añoActual = parseInt(prompt("ingresa año actual"));
+            alert(edadPersonas(añoNacieron, añoActual));
             break;
 
         default:
@@ -127,5 +133,13 @@ function convertirDolares(soles) {
         return "profavor ingrese los soles"
     }else {
         return (soles / 3.90)  + " dolares"
+    }
+}
+
+function edadPersonas(añoNacieron, añoActual) {
+    if(isNaN(añoNacieron) || isNaN(añoActual)){
+        return "ingrese los años"
+    } else {
+        return (añoActual - añoNacieron) + " años"
     }
 }
