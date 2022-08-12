@@ -31,7 +31,10 @@ li{
     justify-content: space-around ;
 }
 
-
+h3{
+    line-height: 1px;
+    color: rgb(68, 67, 67);
+}
 
 /* -------------configuracion del button----------------------- */
 
@@ -43,6 +46,9 @@ text-align: center;
     margin: 10px 0;
 }
 
+button{
+    cursor: pointer;
+}
 
 .contiene-button button {
     min-height: 60px;
